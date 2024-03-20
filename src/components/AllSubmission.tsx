@@ -36,6 +36,8 @@ function AllSubmission() {
       data.stdin = base64.decode(data.stdin);
       data.output = base64.decode(data.output);
     });
+    //added this line as mysql db is  ending the connection unexpectly
+    if (!response) navigate("/all");
     setSubmission(response.data);
     dispatch(storeSubmission({ allSubmissions: response.data }));
     setLoading(false);
