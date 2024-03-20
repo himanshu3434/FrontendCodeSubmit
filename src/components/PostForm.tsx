@@ -33,7 +33,7 @@ function PostForm() {
       },
     };
 
-    const response = await axios.request(createOptions);
+    await axios.request(createOptions);
     navigate("/all");
     // console.log(response);
   };
