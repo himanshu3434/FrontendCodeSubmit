@@ -44,10 +44,7 @@ function AllSubmission() {
   useEffect(() => {
     getAllSubmission();
   }, []);
-  useEffect(() => {
-    // console.log("    submission");
-    // console.log(submission);
-  }, [loading]);
+
   return loading ? (
     <div className="text-white">Loading...</div>
   ) : (
@@ -76,7 +73,7 @@ function AllSubmission() {
                     key={data.docId}
                   >
                     <td>{data.username}</td>
-                    <td>{data.language}</td>
+                    <td>{data.language === "52" ? "C++" : "JAVA"}</td>
                     <td>{data.stdin}</td>
                     <td>{data.code.substring(0, 100)}</td>
                     <td>{data.output}</td>
